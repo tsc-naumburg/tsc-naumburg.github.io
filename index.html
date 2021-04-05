@@ -103,6 +103,10 @@
                 class="q-mr-sm q-pb-none custom_tab" @click="scrollToElement('id_training');"
                 style="width:120px;min-height:50px !important;color: grey" label="Training" >
               </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-sm q-pb-none custom_tab" @click="scrollToElement('id_clublife');"
+                style="width:120px;min-height:50px !important;color: grey" label="Clubleben" >
+              </q-tab>
             </q-tabs>
           </q-toolbar>
         </q-header>
@@ -708,6 +712,61 @@
 
                     </q-card>
                   </div> <!--end of <div class="q-py-xl col-12 col-lg-10 col-md-10">-->
+                  <div class="col-md-1" ></div>
+                </div>
+
+
+                <!-- last section: Clubleben -->
+                <div class="row">
+                  <div class="col-md-1" id="id_clublife"></div>
+                  <div class="q-py-xl col-12 col-lg-10 col-md-10">
+                    <q-card inline @mouseover="hoverOver(1)" @mouseout="hoverOutTimeout(1)" style="border: none;background: #333;"
+                      class="text-left" flat bordered>
+  
+                      <q-card-section class="text-left">
+                        <div class="row">
+
+                          <div class="col-7 col-lg-7 col-md-6 col-sm-12 col-xs-12 q-pl-md q-pr-lg">
+                            <div class="row">
+                              <div class="text-caption text-white q-mt-sm">
+                                🥳
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-white q-mt-sm q-mb-xs">
+                                <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                  Clubleben 🚴‍♀️🍷🧀🍨🎳
+                                  <!-- </a> -->
+                              </div>
+                            </div>
+                            <div class="row">
+                              <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                <div class="text-grey-1 q-mt-sm" style="font-size: medium;">
+                                  Natürlich verbindet uns vor Allem die Liebe zur Bewegung nach Musik, aber Tanzen ist nicht Alles. Wir haben auch viel Freude an anderen schönen Dingen des Lebens! Deshalb starten wir mehrmals im Jahr gemeinsame Unternehmungen neben dem Tanzen – wie zum Beispiel Wanderungen oder Radtouren, oder eine beschwingte Weihnachtsfeier.
+                                </div>
+                              <!-- </a> -->
+                            </div>
+                          </div>
+                          <!-- <div class="col-2 q-py-md q-pl-lg q-pr-md"> -->
+                            <div class="col-5 col-lg-5 col-md-6 col-sm-12 col-xs-12 q-py-md q-px-md">
+                            <div class="row q-py-sm justify-center">
+                              <!-- <a href="https://linktomoreinfo.org" target="_blank"> -->
+                                <q-img style="width: 500px; align-items: flex-end;" src="./img/kids_5-8_3_rp_cut.jpg" >
+                                </q-img>
+                              <!-- </a> -->
+                            </div>
+                            <!-- <div class="row q-py-xs">
+                              <a href="https://someplace/linktomoreinfo" target="_blank" style="color: #999999; text-decoration: none;">https://someplace/linktomoreinfo</a>
+                            </div> -->
+                          </div>
+
+                        </div>
+
+                      </q-card-section>
+
+                    </q-card>
+                  </div>
                   <div class="col-md-1" ></div>
                 </div>
 
