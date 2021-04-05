@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+<!--
+    WARNING! Make sure that you match all Quasar related
+    tags to the same version! (Below it's "@1.15.8")
+  -->
+
+  <head>
+    <title>TSC Rhythmus der Freude</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@1.15.8/dist/quasar.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qflashcard@1.0.1/dist/index.min.css" rel="stylesheet" type="text/css">
+    <link
+    rel="icon"
+    sizes="any"
+    href="../img/favicon.svg">
+  </head>
+
+  <body>
+
+    <style>
+      html, body {
+            margin:0;
+            padding:0;
+        }
+      .my-logo-font {
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+      .my-font {
+        font-family: 'Roboto', sans-serif;
+      }
+      #id_intro {
+        padding-top: 3rem;
+        padding-bottom: 6rem;
+        background: rgba(0,0,0,0.8);
+        background-image: url('https://generative-placeholders.glitch.me/image?width=1000&height=800&style=triangles');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-position: center;
+        filter: grayscale(50%) contrast(150%) opacity(30%);
+        -webkit-filter: grayscale(80%) contrast(150%) opacity(100%);
+      }
+      .my-card {
+        width: 100%;
+        max-width: 200px;
+        margin-inline: 5px;
+      }
+    </style>
+
+    <!-- primary (used): white; secondary (used for cards): #999999; accent (used): very light grey bg '#EEEEEE';
+    positive (unused): flashy green; negative (unused): dark red; info (unused): intense light blue; warning (unused): ochre -->
+    <script>
+    window.quasarConfig = {
+      brand: {
+        primary: '#FFFFFF',
+        secondary: '#999999',
+        accent: '#EEEEEE',
+  
+        dark: '#222',
+  
+        positive: '#21BA45',
+        negative: '#C10015',
+        info: '#31CCEC',
+        warning: '#F2C037'
+      }
+    }
+    </script>
+
+
+    <div id="q-app">
+
+      <q-layout view="hHh lpr fFf">
+
+
+        <!-- header -->
+        <!-- background possible design dark blueish grey: #4b4f51; -->
+        <q-header :style="'background:rgba(255,255,255,0.8);'" class="q-py-none" >
+
+          <q-toolbar class="items-bottom">
+            <span :style="'font-size: 31px;'" class="my-logo-font text-h6 text-grey-7 q-ml-xl text-weight-bolder"></span><span :style="'font-size: 31px;'" class="my-font text-h6 text-grey-7 q-mr-md text-weight-light"> Rhythmus der Freude</span>
+            <q-space></q-space>
+            <q-tabs no-caps q-pb-none >
+              <q-tab :style="[selected_tab == 't_0' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-sm q-pb-none q-my-none custom_tab" @click="scrollToElement('id_kids');"
+                style="width:120px;min-height:50px !important;color: grey" label="Kids" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-sm q-pb-none custom_tab" @click="scrollToElement('id_adults');"
+                style="width:120px;min-height:50px !important;color: grey" label="Erwachsene" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-sm q-pb-none custom_tab" @click="scrollToElement('id_powermix');"
+                style="width:120px;min-height:50px !important;color: grey" label="Powermix" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-sm q-pb-none custom_tab" @click="scrollToElement('id_training');"
+                style="width:120px;min-height:50px !important;color: grey" label="Training" >
+              </q-tab>
+            </q-tabs>
+          </q-toolbar>
+        </q-header>
+
+
+        <q-page-container>
+          <!-- <router-view /> -->
+
+          <q-page>
+
+            <!-- Intro section -->
+            <div class="q-px-md bg-primary" >
+              <!-- <img style="width:100%;height:200px;filter: grayscale(50%) contrast(150%) opacity(30%);
+              -webkit-filter: grayscale(80%) contrast(150%) opacity(100%);" src="https://generative-placeholders.glitch.me/image?width=300&height=200&style=triangles"> -->
+
+              <!-- <div class="q-px-xl q-pt-sm" id="id_intro" style="background-image: url('https://generative-placeholders.glitch.me/image?width=300&height=200&style=triangles'); background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: cover;
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-position: center;"> -->
+              <div class="q-px-xl q-pt-sm bg-primary" id="id_intro" >
+
+                <!-- Intro: Title -->
+                <div class="row justify-left" >
+                  <div class="col-md-1" ></div>
+
+                  <div class="q-pt-xl col-12 col-lg-6 col-md-9" >
+                    <span class="text-left text-grey text-weight-bolder" style="font-size: 61px;">Rhythmus der Freude</span>
+                  </div>
+
+                  <div class="col-md-2" ></div>
+                </div>
+
+                <!-- Intro: Subtitle -->
+                <div class="q-pb-md row justify-left">
+
+                  <div class="col-md-1"></div>
+                  
+                  <div class="q-py-sm col-12 col-lg-10 col-md-10">
+                    <span class="text-center text-grey-9 text-h5 text-weight-light">Man muss des Leben tanzen.</span><span class="text-center text-grey-6 text-h5 text-weight-light"> Friedrich Nietzsche</span>
+                    <img style="width:100%;height:200px;padding-top:15px; filter: grayscale(50%) contrast(150%) opacity(30%);
+              -webkit-filter: grayscale(80%) contrast(150%) opacity(100%);" src="https://generative-placeholders.glitch.me/image?width=400&height=200&style=triangles">
+
+                    <!-- <div class="q-pa-md q-gutter-sm">
+                    <q-img
+                      :src="url"
+                      spinner-color="white"
+                      style="max-width: 100%">
+                    </q-img>
+                    </div> -->
+
+                  </div>
+
+                  <div class="col-md-2"></div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+            <!-- About: Vision -->
+            <!-- <div class="q-px-md bg-primary" >
+              <div class="q-px-xl q-pt-sm bg-primary" id="id_about" > -->
+
+                <!-- Headline & section 1 -->
+                <!-- <div class="row justify-left" >
+                  <div class="col-md-1" ></div>
+
+                  <div class="q-pt-xl col-12 col-lg-9 col-md-9" >
+                    <h5 class="text-left text-grey text-weight-bold" style="font-size: 21px !important;">heading 1
+                    </h5>
+                    <span class="text-center text-grey text-h6 text-weight-light">
+                      text 1  <br/>
+                    </span> -->
+
+                    <!-- Headline & section 2 -->
+                    <!-- <h5 class="text-left text-grey text-weight-bold" style="font-size: 21px !important;">heading2
+                    </h5>
+                    <span class="text-center text-white text-h6 text-weight-light">
+                      Text 2<br/>
+                    </span>
+                  </div>
+
+                  <div class="col-md-1" ></div>
+
+                </div>
+              </div>
+            </div> -->
+
+
+            <!-- Gruppen -->
+            <div class="q-px-md bg-primary" >
+              <div class="q-px-xl q-pt-sm bg-primary" id="id_kids" >
+  
+                <!-- erste Gruppe: Jüngere Kids -->
+                <div class="row">
+                  <div class="col-md-1" ></div>
+                  <div class="q-py-xl col-12 col-lg-10 col-md-10">
+                    <q-card inline @mouseover="hoverOver(1)" @mouseout="hoverOutTimeout(1)" style="border: none;background: #333;"
+                      class="text-left" flat bordered>
+  
+                      <q-card-section class="text-left">
+                        <div class="row">
+
+                          <div class="col-8 q-pl-md q-pr-lg">
+                            <div class="row">
+                              <div class="text-caption text-white q-mt-sm">
+                                Kids 3–6
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-white q-mt-sm q-mb-xs">
+                                <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                  Hallo! Wir sind die Tanzhummeln. 🐝 
+                                  <!-- </a> -->
+                              </div>
+                            </div>
+                            <div class="row">
+                              <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                <div class="text-grey-1 q-mt-sm" style="font-size: medium;">
+                                  Wir treffen uns jeden Dienstag und lernen, wie wir unsere Arme und Beine geschickt und möglichst elegant zu unterschiedlicher Musik bewegen können. Auch an einer schönen, geraden Körperhaltung arbeiten wir. Und außerdem lernen wir unterschiedliche Takte und Rhythmen kennen und versuchen, unsere Bewegungen an die Musik anzupassen.<br />
+                                  Das ist am Anfang gar nicht so einfach, aber es macht großen Spaß!<br />
+                                  Bist Du 3–6 Jahre alt und hast Lust, mitzumachen? Dann komm einfach mal vorbei, schau zu und versuch es. Wir freuen uns auf Dich!
+                                </div>
+                              <!-- </a> -->
+                            </div>
+                          </div>
+                          <!-- <div class="col-2 q-py-md q-pl-lg q-pr-md"> -->
+                          <div class="col-4 q-py-md q-px-md">
+                            <div class="row q-pb-xs">
+                              <!-- <a href="https://linktomoreinfo.org" target="_blank"> -->
+                                <q-img style="height: 300px; width: 300px; align-items: flex-end;" src="../img/kids_3-6_2_cut.jpg" >
+                                </q-img>
+                              <!-- </a> -->
+                            </div>
+                            <!-- <div class="row q-py-xs">
+                              <a href="https://someplace/linktomoreinfo" target="_blank" style="color: #999999; text-decoration: none;">https://someplace/linktomoreinfo</a>
+                            </div> -->
+                          </div>
+
+                        </div>
+
+                      </q-card-section>
+
+                    </q-card>
+                  </div>
+                  <div class="col-md-1" ></div>
+                </div>
+
+
+                <!-- zweite Gruppe: ältere Kinder -->
+                <div class="row">
+                  <div class="col-md-1" ></div>
+                  <div class="q-py-xl col-12 col-lg-10 col-md-10">
+                    <q-card inline @mouseover="hoverOver(1)" @mouseout="hoverOutTimeout(1)" style="border: none;background: #EEEEEE;"
+                      class="text-left" flat bordered>
+  
+                      <q-card-section class="text-left">
+                        <div class="row">
+
+                          <div class="col-8 q-pl-md q-pr-lg">
+                            <div class="row">
+                              <div class="text-caption text-grey-10 q-mt-sm">
+                                Kids 5–8
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-grey-10 q-mt-sm q-mb-xs">
+                                <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                  Hallo! Wir sind die Flatterfalter. 🦋
+                                  <!-- </a> -->
+                              </div>
+                            </div>
+                            <div class="row">
+                              <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                <div class="text-grey-10 q-mt-sm" style="font-size: medium;">
+                                  Wir treffen uns jeden Dienstag und bewegen uns zu unterschiedlichen Titeln aus den Charts. Sicher würden Dir viele Bewegungen und Schrittkombinationen aus Musikvideos bekannt vorkommen. Dabei achten wir auf die unterschiedlichen Takte und Rhythmen und versuchen, den jeweiligen Charakter des Musiktitels geschickt mit unserem Tanz zum Ausdruck zu bringen.<br />
+                                  Bist Du 5 – 8 Jahre alt und hast Lust, mitzumachen? Dann komm einfach mal vorbei, schau zu und versuch es. Wir freuen uns auf Dich!
+                                </div>
+                              <!-- </a> -->
+                            </div>
+                          </div>
+                          <!-- <div class="col-2 q-py-md q-pl-lg q-pr-md"> -->
+                          <div class="col-4 q-py-md q-px-md">
+                            <div class="row q-pb-xs">
+                              <!-- <a href="https://linktomoreinfo.org" target="_blank"> -->
+                                <q-img style="height: 300px; width: 300px; align-items: flex-end;" src="../img/kids_5-8_4_cut.jpg" >
+                                </q-img>
+                              <!-- </a> -->
+                            </div>
+                            <!-- <div class="row q-py-xs">
+                              <a href="https://someplace/linktomoreinfo" target="_blank" style="color: #999999; text-decoration: none;">https://someplace/linktomoreinfo</a>
+                            </div> -->
+                          </div>
+
+                        </div>
+
+                      </q-card-section>
+
+                    </q-card>
+                  </div>
+                  <div class="col-md-1" ></div>
+                </div>
+
+
+                <!-- dritte Gruppe: Donnerstatgs-Kinder -->
+                <div class="row">
+                  <div class="col-md-1" ></div>
+                  <div class="q-py-xl col-12 col-lg-10 col-md-10">
+                    <q-card inline @mouseover="hoverOver(1)" @mouseout="hoverOutTimeout(1)" style="border: none;background: #333;"
+                      class="text-left" flat bordered>
+  
+                      <q-card-section class="text-left">
+                        <div class="row">
+
+                          <div class="col-8 q-pl-md q-pr-lg">
+                            <div class="row">
+                              <div class="text-caption text-white q-mt-sm">
+                                Kids ab 8
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-white q-mt-sm q-mb-xs">
+                                <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                  Hallo! Wir sind die Rhythmuspiraten. 👨‍🎤
+                                  <!-- </a> -->
+                              </div>
+                            </div>
+                            <div class="row">
+                              <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                <div class="text-grey-1 q-mt-sm" style="font-size: medium;">
+                                  Wir treffen uns jeden Donnerstag und trainieren zwei verschiedene Tanzarten: zuerst machen wir Modern Kids Dancing – das sind flotte Bewegungen, die jeder einzeln tanzt. Wahrscheinlich erinnern diese Tänze ein bisschen an das, was Ihr auch aus Videoclips kennt.<br />
+                                  Im zweiten Teil machen wir Gesellschaftstanz – Walzer, Quickstep, Cha-Cha-Cha und Jive zum Beispiel. Und das tanzen wir paarweise, weil diese Tänze nun mal Paartänze sind.<br />
+                                  Wir haben viel Spaß beim Training und freuen uns schon auf unsere nächsten Auftritte!<br />
+                                  Bist Du 8 Jahre oder älter und hast Lust, mitzumachen? Dann komm einfach mal vorbei und schau zu. Wir freuen uns auf Dich!
+                                </div>
+                              <!-- </a> -->
+                            </div>
+                          </div>
+                          <!-- <div class="col-2 q-py-md q-pl-lg q-pr-md"> -->
+                          <div class="col-4 q-py-md q-px-md">
+                            <div class="row q-pb-xs">
+                              <!-- <a href="https://linktomoreinfo.org" target="_blank"> -->
+                                <q-img style="height: 300px; width: 300px; align-items: flex-end;" src="../img/kids_3-6_2_cut.jpg" >
+                                </q-img>
+                              <!-- </a> -->
+                            </div>
+                            <!-- <div class="row q-py-xs">
+                              <a href="https://someplace/linktomoreinfo" target="_blank" style="color: #999999; text-decoration: none;">https://someplace/linktomoreinfo</a>
+                            </div> -->
+                          </div>
+
+                        </div>
+
+                      </q-card-section>
+
+                    </q-card>
+                  </div>
+                  <div class="col-md-1" ></div>
+                </div>
+
+
+                <!-- vierte Gruppe: Erwachsene -->
+                <div class="row">
+                  <div class="col-md-1" id="id_adults"></div>
+                  <div class="q-py-xl col-12 col-lg-10 col-md-10">
+                    <q-card inline @mouseover="hoverOver(1)" @mouseout="hoverOutTimeout(1)" style="border: none;background: #333;"
+                      class="text-left" flat bordered>
+  
+                      <q-card-section class="text-left">
+                        <div class="row">
+
+                          <div class="col-8 q-pl-md q-pr-lg">
+                            <div class="row">
+                              <div class="text-caption text-white q-mt-sm">
+                                Erwachsene
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-white q-mt-sm q-mb-xs">
+                                <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                  Hallo! Wir sind die Schwungvollen. 🕺💃🏻
+                                  <!-- </a> -->
+                              </div>
+                            </div>
+                            <div class="row">
+                              <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                <div class="text-grey-1 q-mt-sm" style="font-size: medium;">
+                                  Wir bilden das Rückgrat unseres Clubs. Weil wir so viele sind, haben wir uns in zwei Gruppen geteilt – das hat aber nichts mit unserem Kenntnisstand oder Geschick beim Tanzen zu tun. In beiden Gruppen tanzen Paare, die ihre ersten (und zweiten) Schritte auf dem Parkett versuchen gemeinsam mit Paaren, die dieses schöne Hobby schon einige Jahre betreiben. Unsere Trainerin Luise versteht es ganz brillant, alle unterschiedlichen Niveaus unter einen Hut zu bringen und gibt jedem Einzelnen immer wieder neue und nützliche Tipps und individuell zugeschnittene Aufgaben, sodass an jedem Trainingsabend für alle etwas sehr Gutes herauskommt. Im Vordergrund steht immer der Spaß; Leistungsdruck lassen wir nicht aufkommen. Alle gemeinsam haben wir natürlich die Liebe zur Bewegung nach Musik und die Freude an den schönen Dingen des Lebens!<br />
+                                  Deshalb unternehmen wir auch mehrmals im Jahr gemeinsame Aktivitäten neben dem Tanzen – wie zum Beispiel Wanderungen oder Radtouren.<br />
+                                  Wir treffen uns jeden Donnerstag zum Training. Außerdem hat natürlich jedes Clubmitglied die Möglichkeit, alle anderen Angebote des TSC ebenfalls zu nutzen; so kann man zum Beispiel am Freitag seine Kondition und Fitness stärken oder auch individuell bestimmte Tanzfolgen noch einmal extra üben.<br />
+                                  Altersmäßig gibt es in unseren beiden Gruppen keinerlei Beschränkungen: zwischen 18 und 118 ist Jeder herzlich willkommen! 😉 <br />
+                                  Na – hast Du Lust auf ein Probetraining? Dann komm‘ einfach am Donnerstag gegen 18:30 bzw. 20:00 vorbei – und bring‘ am Besten einen Partner/eine Partnerin mit. Wir freuen uns auf Euch!
+                                </div>
+                              <!-- </a> -->
+                            </div>
+                          </div>
+                          <!-- <div class="col-2 q-py-md q-pl-lg q-pr-md"> -->
+                          <div class="col-4 q-py-md q-px-md">
+                            <div class="row q-pb-xs">
+                              <!-- <a href="https://linktomoreinfo.org" target="_blank"> -->
+                                <q-img style="height: 300px; width: 300px; align-items: flex-end;" src="../img/kids_3-6_2_cut.jpg" >
+                                </q-img>
+                              <!-- </a> -->
+                            </div>
+                            <!-- <div class="row q-py-xs">
+                              <a href="https://someplace/linktomoreinfo" target="_blank" style="color: #999999; text-decoration: none;">https://someplace/linktomoreinfo</a>
+                            </div> -->
+                          </div>
+
+                        </div>
+
+                      </q-card-section>
+
+                    </q-card>
+                  </div>
+                  <div class="col-md-1" ></div>
+                </div>
+
+
+                <!-- Fünfte Gruppe: Kondition -->
+                <div class="row">
+                  <div class="col-md-1" id="id_powermix"></div>
+                  <div class="q-py-xl col-12 col-lg-10 col-md-10">
+                    <q-card inline @mouseover="hoverOver(1)" @mouseout="hoverOutTimeout(1)" style="border: none;background: #333;"
+                      class="text-left" flat bordered>
+  
+                      <q-card-section class="text-left">
+                        <div class="row">
+
+                          <div class="col-8 q-pl-md q-pr-lg">
+                            <div class="row">
+                              <div class="text-caption text-white q-mt-sm">
+                                Alle Altersklassen
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-white q-mt-sm q-mb-xs">
+                                <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                  Hallo! Dies ist der Power-Mix! ✨💥
+                                  <!-- </a> -->
+                              </div>
+                            </div>
+                            <div class="row">
+                              <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                <div class="text-grey-1 q-mt-sm" style="font-size: medium;">
+                                  In dieser Sparte geht es um ein unterstützendes Angebot, das als Ergänzung zum Tanzen gedacht ist, das man aber natürlich auch als alleinige Aktivität betreiben kann. Wie alle unsere Angebote kann auch das Freitagsprogramm von jedem Clubmitglied – unabhängig vom sonstigen Trainingsprogramm – genutzt werden.<br />
+                                  Mit unterschiedlichen sportlichen Übungen arbeiten wir daran, unsere Kondition zu steigern und die Fitness insgesamt zu verbessern. Auch die Koordination der verschiedenen Körperpartien und Extremitäten wird trainiert; und das Ganze findet in lockerer Atmosphäre und mit musikalischer Unterstützung statt.<br />
+                                  Zu diesem Training können Kinder und Jugendliche auch sehr gern ihre Eltern mitbringen und dann gemeinsam Spaß an der Bewegung haben. Probiert es einfach aus!
+                                </div>
+                              <!-- </a> -->
+                            </div>
+                          </div>
+                          <!-- <div class="col-2 q-py-md q-pl-lg q-pr-md"> -->
+                          <div class="col-4 q-py-md q-px-md">
+                            <div class="row q-pb-xs">
+                              <!-- <a href="https://linktomoreinfo.org" target="_blank"> -->
+                                <q-img style="height: 300px; width: 300px; align-items: flex-end;" src="../img/kids_3-6_2_cut.jpg" >
+                                </q-img>
+                              <!-- </a> -->
+                            </div>
+                            <!-- <div class="row q-py-xs">
+                              <a href="https://someplace/linktomoreinfo" target="_blank" style="color: #999999; text-decoration: none;">https://someplace/linktomoreinfo</a>
+                            </div> -->
+                          </div>
+
+                        </div>
+
+                      </q-card-section>
+
+                    </q-card>
+                  </div>
+                  <div class="col-md-1" ></div>
+                </div>
+
+
+                <!-- Trainingszeiten -->
+                <div class="row">
+                  <div class="col-md-1" id="id_training"></div>
+
+                  <div class="q-py-xl col-12 col-lg-10 col-md-10">
+
+                    <q-card inline @mouseover="hoverOver(1)" @mouseout="hoverOutTimeout(1)" style="border: none;background: #EEEEEE;"
+                      class="text-left" flat bordered>
+  
+                      <q-card-section class="text-left">
+                        <div class="row">
+
+                          <div class="col-12 q-pl-md q-pr-lg">
+
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-grey-10 q-mt-sm q-mb-lg">
+                                  Trainingszeiten
+                              </div>
+                            </div>
+                            <div class="row q-col-gutter-x-xs q-col-gutter-y-lg" style="justify-content: space-between;">
+                              <div class="q-pa-lg row items-start flex-center space-between q-gutter-xl">
+
+                                <!-- <div class="row q-col-gutter-x-xs q-col-gutter-y-lg">
+                                  <div class="col-3" v-for="n in 4" :key="`none-${n}`"> -->
+
+                                    <!-- <div class="fit row wrap justify-between items-start content-start" style="overflow: hidden;">
+                                      <div class="      bg-grey-6" style="overflow: auto;"></div> -->
+
+                                <!-- Trainingszeiten as cards -->
+                                <q-card class="my-card" dark>
+                                  <img src="https://generative-placeholders.glitch.me/image?width=300&height=200&style=triangles">
+                                  <q-card-section>
+                                    <div class="text-h6">Dienstag <br/>16:00–17:00 Uhr</div>
+                                  </q-card-section>
+                          
+                                  <q-card-section>
+                                    🐝 <br />
+                                    Kindertanz <br/>ab 3 Jahre 🐝 
+                                  </q-card-section>
+                                </q-card>
+
+                                <q-card class="my-card" dark>
+                                  <img src="https://generative-placeholders.glitch.me/image?width=300&height=200">
+                                  <q-card-section>
+                                    <div class="text-h6">Dienstag <br/>17:00–18:00 Uhr</div>
+                                  </q-card-section>
+                          
+                                  <q-card-section>
+                                    🦋 <br />
+                                    Kindertanz <br/>ab 6 Jahre 🦋
+                                  </q-card-section>
+                                </q-card>
+
+                                <q-card class="my-card" dark>
+                                  <img src="https://generative-placeholders.glitch.me/image?width=300px&height=200px&style=circles">
+                                  <q-card-section>
+                                    <div class="text-h6">Donnerstag <br/>17:00–18:00 Uhr</div>
+                                  </q-card-section>
+                          
+                                  <q-card-section>
+                                    Gesellschaftstanz für Kinder
+                                    und Jugendliche <br/>ab 6 Jahre 👨‍🎤 
+                                  </q-card-section>
+                                </q-card>
+
+                                <!-- second batch of 3 -->
+                                <q-card class="my-card" dark>
+                                  <img src="https://generative-placeholders.glitch.me/image?width=300&height=200&style=mondrian">
+                                  <q-card-section>
+                                    <div class="text-h6">Donnerstag <br/>18:30–20:00 Uhr</div>
+                                  </q-card-section>
+                          
+                                  <q-card-section>
+                                    Gesellschaftstanz Erwachsene <br/>Gruppe 1 🕺💃🏻 
+                                  </q-card-section>
+                                </q-card>
+
+                                <q-card class="my-card" dark>
+                                  <img src="https://generative-placeholders.glitch.me/image?width=300&height=200&style=123">
+                                  <q-card-section>
+                                    <div class="text-h6">Dienstag <br/>17:00–18:00 Uhr</div>
+                                  </q-card-section>
+                          
+                                  <q-card-section>
+                                    🦋 <br />
+                                    Kindertanz <br/>ab 6 Jahre 🦋
+                                  </q-card-section>
+                                </q-card>
+
+                                <q-card class="my-card" dark>
+                                  <img src="https://generative-placeholders.glitch.me/image?width=300&height=200&style=cubic-disarray">
+                                  <q-card-section>
+                                    <div class="text-h6">Donnerstag <br/>17:00–18:00 Uhr</div>
+                                  </q-card-section>
+                          
+                                  <q-card-section>
+                                    Gesellschaftstanz für Kinder
+                                    und Jugendliche <br/>ab 6 Jahre 👨‍🎤 
+                                  </q-card-section>
+                                </q-card>
+
+                                <!-- third batch of 3 -->
+                                <q-card class="my-card" dark>
+                                  <img src="https://generative-placeholders.glitch.me/image?width=300&height=200&style=triangles&gap=100">
+                                  <q-card-section>
+                                    <div class="text-h6">Dienstag <br/>16:00–17:00 Uhr</div>
+                                  </q-card-section>
+                          
+                                  <q-card-section>
+                                    🐝 <br />
+                                    Kindertanz <br/>ab 3 Jahre 🐝 
+                                  </q-card-section>
+                                </q-card>
+
+                                <q-card class="my-card" dark>
+                                  <img src="https://generative-placeholders.glitch.me/image?width=300&height=200&style=cellular-automata&cells=10">
+                                  <q-card-section>
+                                    <div class="text-h6">Dienstag <br/>17:00–18:00 Uhr</div>
+                                  </q-card-section>
+                          
+                                  <q-card-section>
+                                    🦋 <br />
+                                    Kindertanz <br/>ab 6 Jahre 🦋
+                                  </q-card-section>
+                                </q-card>
+
+                                <q-card class="my-card" dark>
+                                  <img src="https://generative-placeholders.glitch.me/image?width=300&height=200&style=tiles">
+                                  <q-card-section>
+                                      <div class="text-h6">Donnerstag <br/>17:00–18:00 Uhr</div>
+                                  </q-card-section>
+                          
+                                  <q-card-section>
+                                    Gesellschaftstanz für Kinder
+                                    und Jugendliche <br/>ab 6 Jahre 👨‍🎤 
+                                  </q-card-section>
+                                </q-card>
+                              </div><!--end of <div class="q-pa-lg row items-start flex-center space-between q-gutter-xl">
+                              -->
+                            </div> <!-- end of <div class="row q-col-gutter-x-xs q-col-gutter-y-lg" style="justify-content: space-between;">-->
+
+                            <div class="row">
+                              <div class="q-pa-lg row items-start flex-start q-gutter-xl">
+                                <!-- Trainingszeiten as table -->
+                                <table class="items-start flex-start" style="background-color:rgba(0,0,0,0.0);">
+                                  <thead>
+                                    <tr>
+                                      <th colspan="2" align="left">Dienstag</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr style="background-color:rgba(0,0,0,0.05);border-radius: 10px;">
+                                      <td style="padding-right:20px;">16:00 – 17:00 Uhr</td>
+                                      <td>Kindertanz ab 3 Jahre</td>
+                                    </tr>
+                                    <tr style="background-color:rgba(0,0,0,0.09)">
+                                      <td style="padding-right:20px;">17:00 – 18:00 Uhr</td>
+                                      <td>Kindertanz ab 6 Jahre</td>
+                                    </tr>
+                                    <tr>
+                                      <th colspan="2" align="left">Donnerstag</th>
+                                    </tr>
+                                    <tr style="background-color:rgba(0,0,0,0.05)">
+                                      <td style="padding-right:20px;">17:00 – 18:00 Uhr</td>
+                                      <td>Gesellschaftstanz für Kinder
+                                        und Jugendliche ab 6 Jahre</td>
+                                    </tr>
+                                    <tr style="background-color:rgba(0,0,0,0.09)">
+                                      <td style="padding-right:20px;">18:30 – 20:00 Uhr</td>
+                                      <td>Gesellschaftstanz Erwachsene Gruppe 1</td>
+                                    </tr>
+                                    <tr style="background-color:rgba(0,0,0,0.05)">
+                                      <td style="padding-right:20px;">20:00 – 21:30 Uhr</td>
+                                      <td>Gesellschaftstanz Erwachsene Gruppe 2</td>
+                                    </tr>
+                                    <tr>
+                                      <th colspan="2" align="left">Freitag</th>
+                                    </tr>
+                                    <tr style="background-color:rgba(0,0,0,0.09)">
+                                      <td style="padding-right:20px;">16:30 – 17:30 Uhr</td>
+                                      <td>Koordination / Kondition fürs Tanzen</td>
+                                    </tr>
+                                    <tr style="background-color:rgba(0,0,0,0.05)">
+                                      <td style="padding-right:20px;">17:30 – 18:30 Uhr</td>
+                                      <td>Hip Hop und Breakdance</td>
+                                    </tr>
+                                    <tr style="background-color:rgba(0,0,0,0.09)">
+                                      <td style="padding-right:20px;">18:30 – 19:30 Uhr</td>
+                                      <td>Tänzerische Fitness für Körper und Geist</td>
+                                    </tr>
+                                    <tr style="background-color:rgba(0,0,0,0.05)">
+                                      <td style="padding-right:20px;">19:30 – 21:00 Uhr</td>
+                                      <td>Gesellschaftstanz – freies Tanzen
+                                        mit Korrekturhinweisen</td>
+                                    </tr>
+                                    <!-- <tr>
+                                      <th colspan="2" align="left">Trainingsstätte</th>
+                                    </tr>
+                                    <tr style="background-color:rgba(0,0,0,0.05)">
+                                      <td style="padding-right:20px;">Turnhalle des Domgymnasiums</td>
+                                      <td>Thomas – Müntzer – Straße 22/23, Naumburg</td>
+                                    </tr> -->
+                                  </tbody>
+                                </table>
+
+                              </div><!--gutter-->
+                            </div><!--row-->
+
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-grey-10 q-mt-sm q-mb-xs">
+                                  Trainingsstätte
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="q-pl-lg q-pt-xs row items-start q-gutter-xl">
+                                <table style="background-color:rgba(0,0,0,0.0);">
+                                  <thead>
+                                    <tr>
+                                      <th class="text-weight-regular">Turnhalle des Domgymnasiums, Thomas-Müntzer-Straße 22/23, Naumburg</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  </tbody>
+                                </table>
+                              </div> <!--end of gutter-->
+                            </div> <!--end of row-->
+
+                          </div><!--end of <div class="col-12 q-pl-md q-pr-lg">-->
+
+                        </div><!--end of row div-->
+                      </q-card-section>
+
+                    </q-card>
+                  </div> <!--end of <div class="q-py-xl col-12 col-lg-10 col-md-10">-->
+                  <div class="col-md-1" ></div>
+                </div>
+
+
+                <!-- <br />
+                <br /> -->
+              </div>
+            </div><!-- end of Gruppen -->
+
+
+
+            <!-- footer -->
+            <q-toolbar class="flex flex-center text-white text-center bg-dark" 
+              :style="'border-top: 1px solid ' + bg_color">
+              <div class="q-pa-sm q-py-md q-gutter-sm">
+                <q-btn round type="a" href="mailto:anfrage@tanzsportclub-blk.de"
+                  :style="'background:'+ theme_color +'; color: white !important;'" icon="email" >
+                </q-btn>
+                <br/>
+                <br/>
+                Erstellt mit &nbsp; ❤ &nbsp;Tanzsportclub Rhythmus der Freude e.V.&nbsp; ●&nbsp; CC BY 4.0 <br/>
+              </div>
+            </q-toolbar>
+  
+          </q-page>
+
+
+        </q-page-container>
+
+
+      </q-layout>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@1.15.8/dist/quasar.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qflashcard@1.0.1/dist/index.umd.min.js"></script>
+
+
+    <!-- #4b4f51 is grey with a touch blueish; theme_color: '#668fa6' blueish grey; same as background_style -->
+    <script>
+      const { getScrollTarget, setScrollPosition } = Quasar.scroll
+  
+      app = new Vue({
+        el: "#q-app",
+        data() {
+          return {
+            slide: 1,
+            review_slide: 'style',
+            selected_tab: 't_0',
+            team_slide: 1,
+            bg_color: '#DDDDDD',
+            hover: false,
+            active: false,
+            url: './images/Neuroweblab1.png',
+            theme_color: '#444444',
+            primary: 'red',
+            background_style: '#444444',
+            about_heading_1: [],
+            about_heading_2: [],
+            about_heading_3: [],
+            about_heading_color_1: '#4b4f51',
+            about_heading_color_2: '#424242',
+            about_heading_color_3: '#424242',
+          }
+        },
+        methods: {
+          scrollToElement(id) {
+            let el = document.getElementById(id)
+            const target = getScrollTarget(el)
+            const offset = el.offsetTop + 3
+            const duration = 900
+            setScrollPosition(target, offset, duration)
+          },
+          /* go back to main page from sub pages */
+          goTo(url){
+            window.location.href = url;
+          },
+          changeBgColor() {
+            this.theme_color = this.bg_color;
+            this.background_style = 'background-color:' + this.bg_color.split(')')[0] + ',0.7)';
+          },
+          hoverOver: function (index) {
+            this['about_heading_color_' + index] = this.theme_color;
+            this['about_heading_' + index] = ['animated', 'bounceIn'];
+          },
+          hoverOutTimeout: function (index) {
+            this['about_heading_color_' + index] = '#4b4f51';
+            setTimeout(() => {
+              this['about_heading_' + index] = [];
+            }, 1000);
+          },
+        }
+      });
+    </script>
+
+  </body>
+
+</html>
