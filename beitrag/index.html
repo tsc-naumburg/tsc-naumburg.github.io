@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<!--
+    WARNING! Make sure that you match all Quasar related
+    tags to the same version! (Below it's "@1.15.8")
+  -->
+
+  <head>
+    <title>TSC Rhythmus der Freude</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@1.15.8/dist/quasar.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qflashcard@1.0.1/dist/index.min.css" rel="stylesheet" type="text/css">
+    <link
+    rel="icon"
+    sizes="any"
+    href="./img/favicon.svg">
+  </head>
+
+  <body>
+
+    <style>
+      html, body {
+            margin:0;
+            padding:0;
+        }
+      .my-logo-font {
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+      .my-font {
+        font-family: 'Roboto', sans-serif;
+      }
+      #id_intro {
+        padding-top: 3rem;
+        padding-bottom: 0rem;
+        background: rgba(0,0,0,0.8);
+        background-image: url('https://generative-placeholders.glitch.me/image?width=1000&height=800&style=triangles');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-position: center;
+        filter: grayscale(50%) contrast(150%) opacity(30%);
+        -webkit-filter: grayscale(80%) contrast(150%) opacity(100%);
+      }
+      .my-card {
+        width: 100%;
+        /* max-width: 300px; */
+        max-width: 200px;
+        margin-inline: 5px;
+      }
+      .beitrags-card {
+        width: 100%;
+        /* max-width: 300px; */
+        max-width: 200px;
+        margin-inline: 5px;
+      }
+      .p2 {
+        line-height:1.75;
+        color:#111;
+        /* padding-top:1em; */
+        margin-top:-15px;
+        margin-left:-16px;
+        /* margin-bottom: -25px; */
+      }
+    </style>
+
+    <!-- primary (used): white; secondary (used for cards): #999999; accent (used): very light grey bg '#EEEEEE';
+    positive (unused): flashy green; negative (unused): dark red; info (unused): intense light blue; warning (unused): ochre -->
+    <script>
+    window.quasarConfig = {
+      brand: {
+        primary: '#FFFFFF',
+        secondary: '#999999',
+        accent: '#EEEEEE',
+  
+        dark: '#222',
+  
+        positive: '#21BA45',
+        negative: '#C10015',
+        info: '#31CCEC',
+        warning: '#F2C037'
+      }
+    }
+    </script>
+
+    <div id="q-app">
+
+      <q-layout view="hHh lpr fFf">
+
+
+        <!-- header -->
+        <!-- background possible design dark blueish grey: #4b4f51; -->
+        <q-header :style="'background:rgba(255,255,255,0.8);'" class="q-py-none" >
+
+          <q-toolbar class="items-bottom">
+            <img src="../img/favicon.svg" style="height: 40px; padding-left: 5%; padding-right: 9px; opacity: 0.7;" ><span :style="'font-size: 20px;'" class="my-font text-h6 text-grey-7 q-mr-md text-weight-light"> Tanzsportclub Rhythmus der Freude Naumburg e.V.</span>
+            <q-space></q-space>
+            <q-tabs no-caps q-pb-none >
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none q-my-none custom_tab" @click="goTo('../index.html#id_kids');"
+                style="width:120px;min-height:50px !important;color: grey" label="Kids" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none custom_tab" @click="goTo('../index.html#id_adults');"
+                style="width:120px;min-height:50px !important;color: grey" label="Erwachsene" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none custom_tab" @click="goTo('../index.html#id_powermix');"
+                style="width:120px;min-height:50px !important;color: grey" label="Powermix" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none custom_tab" @click="goTo('../index.html#id_training');"
+                style="width:120px;min-height:50px !important;color: grey" label="Training" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none custom_tab" @click="goTo('../index.html#id_clublife');"
+                style="width:120px;min-height:50px !important;color: grey" label="Clubleben" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none custom_tab" @click="goTo('../beitrag')"
+                style="width:120px;min-height:50px !important;color: grey" label="Beitrag" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none custom_tab" @click="goTo('../img/Satzung.pdf')"
+                style="width:120px;min-height:50px !important;color: grey" label="Satzung" >
+              </q-tab>
+            </q-tabs>
+          </q-toolbar>
+        </q-header>
+
+
+        <q-page-container>
+          <!-- <router-view /> -->
+
+          <q-page>
+
+            <!-- Intro section -->
+            <div class="q-px-md bg-primary" >
+
+              <div class="q-px-xl q-pt-sm bg-primary" id="id_intro" >
+
+                <!-- Intro: Subtitle -->
+                <div class="q-pb-md row justify-left">
+
+                  <div class="col-md-1"></div>
+                  
+                  <div class="q-py-sm col-12 col-lg-10 col-md-10">
+                    <span class="text-center text-grey-9 text-h5 text-weight-light">Mitgliederbeiträge.</span><span class="text-center text-grey-6 text-h5 text-weight-light"> Auszug aus der Finanzordnung</span>
+                  </div>
+
+                  <div class="col-md-2"></div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+            <!-- Mitgliederbeitraege -->
+            <div class="q-px-md bg-primary" >
+              <div class="q-px-xl q-pt-sm bg-primary" id="id_kids" >
+  
+                <!-- Paragraphen 3-5 -->
+                <div class="row">
+                  <div class="col-md-1" ></div>
+                  <div class="q-py-xl col-12 col-lg-10 col-md-10">
+                    <q-card inline @mouseover="hoverOver(1)" @mouseout="hoverOutTimeout(1)" style="border: none;background: #EEEEEE;"
+                      class="text-left" flat bordered>
+  
+                      <q-card-section class="text-left">
+                        <div class="row">
+
+                          <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 q-pl-md q-pr-lg">
+                            <div class="row">
+                              <div class="text-caption text-grey-10 q-mt-sm">
+                                
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-grey-10 q-mt-sm q-mb-xs">
+                                <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                  § 3 Mitgliedsbeiträge und Aufnahmegebühren
+                                  <!-- </a> -->
+                              </div>
+                            </div>
+                            <div class="row">
+                              <!-- <a href="https://linktomoreinfo.org" style="color:white; text-decoration: none;"> -->
+                                <div class="text-grey-10 q-mt-sm" style="font-size: medium;">
+                                  <span class="p2">1.</span> Die monatlichen Beiträge der ordentlichen und außerordentlichen Mitglieder werden in einer monatlichen Zahlung per Dauerauftrag an den Verein gezahlt.<br />
+                                  <span class="p2">2.</span> Folgende Beiträge gelten:<br />
+                                  a. ordentliche Mitglieder -Gesellschaftstanz-: 15,00 Euro <br />
+                                  b. ordentliche Mitglieder -Gymnastik-: 13,00 Euro<br />
+                                  c. außerordentliche Mitglieder (Kinder/Jugendliche bis 18 Jahre): 10,00 Euro<br />
+                                  d. außerordentliche Mitglieder (Geschwisterkinder bis 18 Jahre): 7,50 Euro<br />
+                                  <span class="p2">3.</span> Der Verein erhebt eine Aufnahmegebühr von 25,00 Euro (fünfundzwanzig Euro), die nach Aufnahme in den Verein fällig wird und mit dem ersten Mitgliedsbeitrag per Überweisung zu entrichten ist.<br />
+                                </div>
+                              <!-- </a> -->
+                            </div>
+                            <!-- next paragraph -->
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-grey-10 q-mt-xl q-mb-xs">
+                                §4 Zahlweise
+                              </div>
+                            </div>
+                            <div class="row">
+                                <div class="text-grey-10 q-mt-sm" style="font-size: medium;">
+                                  <span class="p2">1.</span> Die Zahlungsverpflichtungen der Mitglieder werden ausschließlich per Dauerauftrag von den Mitgliedern auf folgendes Konto überwiesen:<br />
+                                  Kreditinstitut: Sparkasse Burgenlandkreis, Zeitz<br />
+                                  Verwendungszweck: Mitgliedsnummer und Monat<br />
+                                  IBAN: DE79 8005 3000 3320 0149 93<br />
+                                  BIC: NOLADE21BLK
+                                </div>
+                            </div>
+                            <!-- next paragraph -->
+                            <div class="row">
+                              <div :class="about_heading_1" :style="'color: ' + about_heading_color_1"
+                                class="about_heading_1 text-h6 text-grey-10 q-mt-xl q-mb-xs">
+                                §5 Zahlungsrhythmus
+                              </div>
+                            </div>
+                            <div class="row">
+                                <div class="text-grey-10 q-mt-sm" style="font-size: medium;">
+                                  <span class="p2">1.</span> Als Zahlungsrhythmus ist eine monatliche Beitragsentrichtung bis zum <b>15. des Monats</b> unter Angabe der <b>Mitgliedsnummer</b> zu überweisen.<br />
+                                  <span class="p2">2.</span> Rückbuchungen gehen zu Lasten des Beitragszahlungspflichtigen. Beitragszahlungen erfolgen durchgehend über die 12 Monate eines jeden Jahres, unabhängig vom Stattfinden des Trainings.<br />
+                                  <span class="p2">3.</span> Sollte ein Mitglied seinen Zahlungsverpflichtungen nicht fristgemäß nachkommen, wird es
+                                  vom Verein gemahnt und verliert bei fortgesetzter Nichteinhaltung der Beitragspflicht seine mitgliedschaftlichen Rechte.
+                                </div>
+                            </div>
+
+
+                          </div>
+
+                        </div>
+
+                      </q-card-section>
+
+                    </q-card>
+                  </div>
+                  <div class="col-md-1" ></div>
+                </div>
+
+
+                <!-- <br />
+                <br /> -->
+              </div> <!--end of <div class="q-px-xl q-pt-sm bg-primary" id="id_kids" >-->
+            </div><!-- end of Gruppen <div class="q-px-md bg-primary" > -->
+
+
+
+            <!-- footer -->
+            <q-toolbar class="flex flex-center text-white text-center bg-dark" 
+              :style="'border-top: 1px solid ' + bg_color">
+              <div class="q-pa-sm q-py-md q-gutter-sm">
+                <q-btn round type="a" href="mailto:anfrage@tanzsportclub-blk.de"
+                  :style="'background:'+ theme_color +'; color: white !important;'" icon="email" >
+                </q-btn>
+                <br/>
+                <br/>
+                Erstellt mit &nbsp; ❤ &nbsp;Tanzsportclub Rhythmus der Freude e.V.&nbsp; ●&nbsp; CC BY 4.0 <br/>
+              </div>
+            </q-toolbar>
+  
+          </q-page>
+
+
+        </q-page-container>
+
+
+      </q-layout>
+    </div> <!--end of <div id="q-app">-->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@1.15.8/dist/quasar.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qflashcard@1.0.1/dist/index.umd.min.js"></script>
+    <script src='/js/main.js'></script>
+
+
+    <!-- #4b4f51 is grey with a touch blueish; theme_color: '#668fa6' blueish grey; same as background_style -->
+    <script>
+      const { getScrollTarget, setScrollPosition } = Quasar.scroll
+  
+      app = new Vue({
+        el: "#q-app",
+        data() {
+          return {
+            slide: 1,
+            review_slide: 'style',
+            selected_tab: 't_0',
+            team_slide: 1,
+            bg_color: '#DDDDDD',
+            hover: false,
+            active: false,
+            url: './images/Neuroweblab1.png',
+            theme_color: '#444444',
+            primary: 'red',
+            background_style: '#444444',
+            about_heading_1: [],
+            about_heading_2: [],
+            about_heading_3: [],
+            about_heading_color_1: '#4b4f51',
+            about_heading_color_2: '#424242',
+            about_heading_color_3: '#424242',
+          }
+        },
+        methods: {
+          scrollToElement(id) {
+            let el = document.getElementById(id)
+            const target = getScrollTarget(el)
+            const offset = el.offsetTop + 3
+            const duration = 900
+            setScrollPosition(target, offset, duration)
+          },
+          /* go back to main page from sub pages */
+          goTo(url){
+            window.location.href = url;
+          },
+          changeBgColor() {
+            this.theme_color = this.bg_color;
+            this.background_style = 'background-color:' + this.bg_color.split(')')[0] + ',0.7)';
+          },
+          hoverOver: function (index) {
+            this['about_heading_color_' + index] = this.theme_color;
+            this['about_heading_' + index] = ['animated', 'bounceIn'];
+          },
+          hoverOutTimeout: function (index) {
+            this['about_heading_color_' + index] = '#4b4f51';
+            setTimeout(() => {
+              this['about_heading_' + index] = [];
+            }, 1000);
+          },
+        }
+      });
+    </script>
+
+  </body>
+
+</html>
