@@ -87,25 +87,33 @@
             <img src="./img/favicon.svg" style="height: 40px; padding-left: 5%; padding-right: 9px; opacity: 0.7;" ><span :style="'font-size: 20px;'" class="my-font text-h6 text-grey-7 q-mr-md text-weight-light"> Tanzsportclub Rhythmus der Freude Naumburg e.V.</span>
             <q-space></q-space>
             <q-tabs no-caps q-pb-none >
-              <q-tab :style="[selected_tab == 't_0' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-sm q-pb-none q-my-none custom_tab" @click="scrollToElement('id_kids');"
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none q-my-none custom_tab" @click="scrollToElement('id_kids');"
                 style="width:120px;min-height:50px !important;color: grey" label="Kids" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-sm q-pb-none custom_tab" @click="scrollToElement('id_adults');"
+                class="q-mr-xs q-pb-none custom_tab" @click="scrollToElement('id_adults');"
                 style="width:120px;min-height:50px !important;color: grey" label="Erwachsene" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-sm q-pb-none custom_tab" @click="scrollToElement('id_powermix');"
+                class="q-mr-xs q-pb-none custom_tab" @click="scrollToElement('id_powermix');"
                 style="width:120px;min-height:50px !important;color: grey" label="Powermix" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-sm q-pb-none custom_tab" @click="scrollToElement('id_training');"
+                class="q-mr-xs q-pb-none custom_tab" @click="scrollToElement('id_training');"
                 style="width:120px;min-height:50px !important;color: grey" label="Training" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-sm q-pb-none custom_tab" @click="scrollToElement('id_clublife');"
+                class="q-mr-xs q-pb-none custom_tab" @click="scrollToElement('id_clublife');"
                 style="width:120px;min-height:50px !important;color: grey" label="Clubleben" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none custom_tab" @click="goTo('./beitrag/')"
+                style="width:120px;min-height:50px !important;color: grey" label="Beitrag" >
+              </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none custom_tab" @click="goTo('./img/Satzung.pdf')"
+                style="width:120px;min-height:50px !important;color: grey" label="Satzung" >
               </q-tab>
             </q-tabs>
           </q-toolbar>
@@ -149,8 +157,14 @@
                   
                   <div class="q-py-sm col-12 col-lg-10 col-md-10">
                     <span class="text-center text-grey-9 text-h5 text-weight-light">Man muss das Leben tanzen.</span><span class="text-center text-grey-6 text-h5 text-weight-light"> Friedrich Nietzsche</span>
+                    <!-- pattern -->
                     <img style="width:100%;height:200px;padding-top:15px; filter: grayscale(50%) contrast(150%) opacity(30%);
               -webkit-filter: grayscale(80%) contrast(150%) opacity(100%);" src="https://generative-placeholders.glitch.me/image?width=1200&height=200&style=triangles">
+                    <!-- shoes -->
+                    <q-img
+                      src="/img/shoes.gif"
+                      style="width:30%; opacity:1.0; margin-top:20px;position:absolute; right:150px;">
+                    </q-img>
 
                     <!-- <div class="q-pa-md q-gutter-sm">
                     <q-img
@@ -684,6 +698,13 @@
                                       <td style="padding-right:20px;">Turnhalle des Domgymnasiums</td>
                                       <td>Thomas-Müntzer-Straße 22/23, Naumburg</td>
                                     </tr>
+                                    <tr>
+                                      <th colspan="2" align="left" class="q-pt-sm">Aufnahmeformular</th>
+                                    </tr>
+                                    <tr style="background-color:rgba(0,0,0,0.0)">
+                                      <td style="padding-right:20px;"><a style="color:#111; cursor:pointer;text-decoration:none;" href="./img/Aufnahmeantrag.pdf">Aufnahmeformular herunterladen</a></td>
+                                      <td></td>
+                                    </tr>
                                   </tbody>
                                 </table>
 
@@ -812,6 +833,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.15.8/dist/quasar.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qflashcard@1.0.1/dist/index.umd.min.js"></script>
+    <script src='/js/main.js'></script>
 
 
     <!-- #4b4f51 is grey with a touch blueish; theme_color: '#668fa6' blueish grey; same as background_style -->
