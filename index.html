@@ -116,6 +116,10 @@
                 class="q-mr-xs q-pb-none custom_tab" @click="goTo('./img/Satzung.pdf')"
                 style="width:120px;min-height:50px !important;color: grey" label="Satzung" >
               </q-tab>
+              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+                class="q-mr-xs q-pb-none custom_tab" @click="goTo('./img/Beitrittserklaerung_TSC.pdf')"
+                style="width:120px;min-height:50px !important;color: grey" label="Beitritt" >
+              </q-tab>
             </q-tabs>
           </q-toolbar>
         </q-header>
