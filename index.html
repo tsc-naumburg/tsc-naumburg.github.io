@@ -89,9 +89,9 @@
           </q-toolbar>
 
           <!-- <q-space></q-space> -->
-          <q-toolbar :style="'flex-wrap:wrap; background:rgba(255,255,255,0.0);'" class="items-bottom material-design-icons-4 row flex wrap" style="justify-content: left; justify-items: left; padding-left: 3%;padding-right: 3%; flex-wrap:wrap !important;">
+          <q-toolbar :style="'flex-wrap:wrap; background:rgba(255,255,255,0.0);'" class="items-bottom material-design-icons-4 row flex wrap q-py-none" style="justify-content: left; justify-items: left; padding-left: 3%;padding-right: 3%; flex-wrap:wrap !important;">
 
-            <q-tabs :style="'flex-wrap:wrap;'" no-caps q-pb-none class="material-design-icons-4 row flex wrap" style="flex-wrap:wrap !important; text-align: center;" >
+            <q-tabs :style="'flex-wrap:wrap;'" no-caps q-py-none class="material-design-icons-4 row flex wrap" style="flex-wrap:wrap !important; text-align: center;" >
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
                 class="q-mx-xs q-pb-none custom_tab wrap" @click="scrollToElement('id_kids');"
                 style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Kids" >
