@@ -82,44 +82,50 @@
 
         <!-- header -->
         <!-- background possible design dark blueish grey: #4b4f51; -->
-        <q-header :style="'background:rgba(255,255,255,0.8);'" class="q-py-none" >
+        <q-header :style="'background:rgba(255,255,255,0.97);'" class="q-py-none material-design-icons-4 row flex wrap" >
 
-          <q-toolbar class="items-bottom">
-            <img src="./img/favicon.svg" style="height: 40px; padding-left: 5%; padding-right: 9px; opacity: 0.7;" ><span :style="'font-size: 20px;'" class="my-font text-h6 text-grey-7 q-mr-md text-weight-light"> Tanzsportclub Rhythmus der Freude Naumburg e.V.</span>
-            <q-space></q-space>
-            <q-tabs no-caps q-pb-none >
+          <q-toolbar class="items-bottom material-design-icons-4 row flex wrap" style="justify-content: right;">
+            <img src="./img/favicon.svg" style="height: 40px; padding-left: 5%; opacity: 0.7;" ><span :style="'font-size: 20px;'" class="my-font text-h6 text-grey-7 q-mx-md text-weight-light"> Tanzsportclub Rhythmus der Freude Naumburg e.V.</span>
+          </q-toolbar>
+
+          <!-- <q-space></q-space> -->
+          <q-toolbar :style="'flex-wrap:wrap; background:rgba(255,255,255,0.0);'" class="items-bottom material-design-icons-4 row flex wrap" style="justify-content: left; justify-items: left; padding-left: 3%;padding-right: 3%; flex-wrap:wrap !important;">
+
+            <q-tabs :style="'flex-wrap:wrap;'" no-caps q-pb-none class="material-design-icons-4 row flex wrap" style="flex-wrap:wrap !important; text-align: center;" >
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-xs q-pb-none q-my-none custom_tab" @click="scrollToElement('id_kids');"
-                style="width:120px;min-height:50px !important;color: grey" label="Kids" >
+                class="q-mx-xs q-pb-none custom_tab wrap" @click="scrollToElement('id_kids');"
+                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Kids" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-xs q-pb-none custom_tab" @click="scrollToElement('id_adults');"
-                style="width:120px;min-height:50px !important;color: grey" label="Erwachsene" >
+                class="q-mx-xs q-pb-none custom_tab wrap" @click="scrollToElement('id_adults');"
+                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Erwachsene" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-xs q-pb-none custom_tab" @click="scrollToElement('id_powermix');"
-                style="width:120px;min-height:50px !important;color: grey" label="Powermix" >
+                class="p-mx-xs q-pb-none custom_tab wrap" @click="scrollToElement('id_powermix');"
+                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Powermix" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-xs q-pb-none custom_tab" @click="scrollToElement('id_training');"
-                style="width:120px;min-height:50px !important;color: grey" label="Training" >
+                class="p-mx-xs q-pb-none custom_tab wrap" @click="scrollToElement('id_training');"
+                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Training" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-xs q-pb-none custom_tab" @click="scrollToElement('id_clublife');"
-                style="width:120px;min-height:50px !important;color: grey" label="Clubleben" >
+                class="p-mx-xs q-pb-none custom_tab wrap" @click="scrollToElement('id_clublife');"
+                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Clubleben" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-xs q-pb-none custom_tab" @click="goTo('./beitrag/')"
-                style="width:120px;min-height:50px !important;color: grey" label="Beitrag" >
+                class="p-mx-xs q-pb-none custom_tab" @click="goTo('./beitrag/')"
+                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Beitrag" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-xs q-pb-none custom_tab" @click="goTo('./img/Satzung.pdf')"
-                style="width:120px;min-height:50px !important;color: grey" label="Satzung" >
+                class="p-mx-xs q-pb-none custom_tab wrap" @click="goTo('./img/Satzung.pdf')"
+                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Satzung" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mr-xs q-pb-none custom_tab" @click="goTo('./img/Beitrittserklaerung_TSC.pdf')"
-                style="width:120px;min-height:50px !important;color: grey" label="Beitritt" >
+                class="p-mx-xs q-pb-none custom_tab wrap" @click="goTo('./img/Beitrittserklaerung_TSC.pdf')"
+                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Beitritt" >
               </q-tab>
+              <!-- <span class="material-design-icons-4">chevron_right</span> -->
+              <!-- <img src="./fonts/material-design-icons-4.0.0/baseline_chevron_right_black_24dp.png" style="height: 40px; padding-left: 5%; opacity: 0.7;" ><span :style="'font-size: 20px;'" class="material-design-icons-4 my-font text-h6 text-grey-7 q-mx-md text-weight-light">chevron_right</span> -->
             </q-tabs>
           </q-toolbar>
         </q-header>
