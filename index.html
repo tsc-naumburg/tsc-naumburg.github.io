@@ -91,38 +91,38 @@
           <!-- <q-space></q-space> -->
           <q-toolbar :style="'flex-wrap:wrap; background:rgba(255,255,255,0.0);'" class="items-bottom material-design-icons-4 row flex wrap q-py-none" style="justify-content: left; justify-items: left; padding-left: 3%;padding-right: 3%; flex-wrap:wrap !important;">
 
-            <q-tabs :style="'flex-wrap:wrap;'" no-caps q-py-none class="material-design-icons-4 row flex wrap items-bottom" style="flex-wrap:wrap !important; text-align: center;" >
+            <q-tabs :style="'flex-wrap:wrap;'" no-caps q-py-none q-my-none class="material-design-icons-4 row flex wrap items-bottom" style="flex-wrap:wrap !important; text-align: center;vertical-align: middle;" >
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mx-none q-py-none custom_tab wrap" @click="scrollToElement('id_kids');"
-                style="max-width: 65px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Kids" >
+                class="q-mx-none q-py-none q-my-none custom_tab wrap" @click="scrollToElement('id_kids');"
+                style="max-width: 72px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important; margin-top:none;border-top:none;border-bottom:none;color: grey" label="Kids" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mx-none q-px-md q-py-none custom_tab wrap" @click="scrollToElement('id_adults');"
-                style="max-width: 110px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Erwachsene" >
+                class="q-mx-none q-px-md q-py-none q-my-none custom_tab wrap" @click="scrollToElement('id_adults');"
+                style="max-width: 112px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important; margin-top:none;border-top:none;border-bottom:none;color: grey" label="Erwachsene" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mx-none q-py-none custom_tab wrap" @click="scrollToElement('id_powermix');"
-                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Powermix" >
+                class="q-mx-none q-py-none q-my-none custom_tab wrap" @click="scrollToElement('id_powermix');"
+                style="max-width: 105px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important; margin-top:none;border-top:none;border-bottom:none;color: grey" label="Powermix" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mx-none q-py-none custom_tab wrap" @click="scrollToElement('id_training');"
-                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Training" >
+                class="q-mx-none q-py-none q-my-none custom_tab wrap" @click="scrollToElement('id_training');"
+                style="max-width: 100px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important;margin-top:none;border-top:none;border-bottom:none;color: grey" label="Training" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mx-none q-py-none custom_tab wrap" @click="scrollToElement('id_clublife');"
-                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Clubleben" >
+                class="q-mx-none q-py-none q-my-none custom_tab wrap" @click="scrollToElement('id_clublife');"
+                style="max-width: 100px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important;margin-top:none;border-top:none;border-bottom:none;color: grey" label="Clubleben" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mx-none q-py-none custom_tab" @click="goTo('./beitrag/')"
-                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Beitrag" >
+                class="q-mx-none q-py-none q-my-none custom_tab" @click="goTo('./beitrag/')"
+                style="max-width: 100px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important;margin-top:none;border-top:none;border-bottom:none;color: grey" label="Beitrag" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mx-none q-py-none custom_tab wrap" @click="goTo('./img/Satzung.pdf')"
-                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Satzung" >
+                class="q-mx-none q-py-none q-my-none custom_tab wrap" @click="goTo('./img/Satzung.pdf')"
+                style="max-width: 100px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important;margin-top:none;border-top:none;border-bottom:none;color: grey" label="Satzung" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mx-none q-py-none custom_tab wrap" @click="goTo('./img/Beitrittserklaerung_TSC.pdf')"
-                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Beitritt" >
+                class="q-mx-none q-py-none q-my-none custom_tab wrap" @click="goTo('./img/Beitrittserklaerung_TSC.pdf')"
+                style="max-width: 100px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important;margin-top:none;border-top:none;border-bottom:none;color: grey" label="Beitritt" >
               </q-tab>
               <!-- <span class="material-design-icons-4">chevron_right</span> -->
               <!-- <img src="./fonts/material-design-icons-4.0.0/baseline_chevron_right_black_24dp.png" style="height: 40px; padding-left: 5%; opacity: 0.7;" ><span :style="'font-size: 20px;'" class="material-design-icons-4 my-font text-h6 text-grey-7 q-mx-md text-weight-light">chevron_right</span> -->
