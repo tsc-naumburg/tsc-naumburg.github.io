@@ -93,35 +93,35 @@
 
             <q-tabs :style="'flex-wrap:wrap;'" no-caps q-py-none class="material-design-icons-4 row flex wrap" style="flex-wrap:wrap !important; text-align: center;" >
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mx-xs q-py-none custom_tab wrap" @click="scrollToElement('id_kids');"
-                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Kids" >
+                class="q-mx-none q-py-none custom_tab wrap" @click="scrollToElement('id_kids');"
+                style="max-width: 65px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Kids" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="q-mx-xs q-py-none custom_tab wrap" @click="scrollToElement('id_adults');"
-                style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Erwachsene" >
+                class="q-mx-none q-px-md q-py-none custom_tab wrap" @click="scrollToElement('id_adults');"
+                style="max-width: 110px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Erwachsene" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="p-mx-xs q-py-none custom_tab wrap" @click="scrollToElement('id_powermix');"
+                class="q-mx-none q-py-none custom_tab wrap" @click="scrollToElement('id_powermix');"
                 style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Powermix" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="p-mx-xs q-py-none custom_tab wrap" @click="scrollToElement('id_training');"
+                class="q-mx-none q-py-none custom_tab wrap" @click="scrollToElement('id_training');"
                 style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Training" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="p-mx-xs q-py-none custom_tab wrap" @click="scrollToElement('id_clublife');"
+                class="q-mx-none q-py-none custom_tab wrap" @click="scrollToElement('id_clublife');"
                 style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Clubleben" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="p-mx-xs q-py-none custom_tab" @click="goTo('./beitrag/')"
+                class="q-mx-none q-py-none custom_tab" @click="goTo('./beitrag/')"
                 style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Beitrag" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="p-mx-xs q-py-none custom_tab wrap" @click="goTo('./img/Satzung.pdf')"
+                class="q-mx-none q-py-none custom_tab wrap" @click="goTo('./img/Satzung.pdf')"
                 style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Satzung" >
               </q-tab>
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
-                class="p-mx-xs q-py-none custom_tab wrap" @click="goTo('./img/Beitrittserklaerung_TSC.pdf')"
+                class="q-mx-none q-py-none custom_tab wrap" @click="goTo('./img/Beitrittserklaerung_TSC.pdf')"
                 style="max-width: 100px;flex-wrap: wrap !important;min-height:50px !important;color: grey" label="Beitritt" >
               </q-tab>
               <!-- <span class="material-design-icons-4">chevron_right</span> -->
@@ -948,7 +948,7 @@
             bg_color: '#DDDDDD',
             hover: false,
             active: false,
-            url: './images/Neuroweblab1.png',
+            url: './img/header/logo.png',
             theme_color: '#444444',
             primary: 'red',
             background_style: '#444444',
