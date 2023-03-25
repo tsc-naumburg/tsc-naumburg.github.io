@@ -4,3 +4,39 @@
 img/.DS_Store
 versions/.DS_Store
 
+.gitignore
+
+.lintr
+
+fonts/material-design-icons-4.0.0/.gitignore
+fonts/material-design-icons-4.0.0/24px_black.png
+fonts/material-design-icons-4.0.0/LICENSE
+fonts/material-design-icons-4.0.0/README.md
+fonts/material-design-icons-4.0.0/android/
+fonts/material-design-icons-4.0.0/baseline_chevron_right_black_24dp.png
+fonts/material-design-icons-4.0.0/font/
+fonts/material-design-icons-4.0.0/ios/
+fonts/material-design-icons-4.0.0/png/
+fonts/material-design-icons-4.0.0/src/
+fonts/material-design-icons-4.0.0/update/
+
+img/07_VLuise.JPG
+img/7_V-Luise.JPG
+img/7_V-Luise_orig.JPG
+img/7_V-Luise_s_orig.JPG
+img/80ce0d07-6f7b-4f05-8470-eafd1c6940cb.JPG
+img/Screenshot 2021-04-05 at 18.18.03.png
+img/Traineretc_undImpressum - Kopie.txt
+img/header/
+img/kids_3-6.jpg
+img/kids_3-6_2.jpg
+img/kids_3-6_3.jpg
+img/kids_5-8_3_rp.JPG
+img/kids_5-8_4.JPG
+img/schwungvoll.jpg
+img/unused/
+
+index_oldTabs.html
+index_oldTabs_2.html
+
+versions/satzungenetc/
