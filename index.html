@@ -102,10 +102,10 @@
                 class="q-mx-none q-px-md q-py-none q-my-none custom_tab wrap" @click="scrollToElement('id_adults');"
                 style="max-width: 114px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important; margin-top:none;border-top:none;border-bottom:none;color: grey" label="Erwachsene" >
               </q-tab>
-              <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
+              <!-- <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
                 class="q-mx-none q-py-none q-my-none custom_tab wrap" @click="scrollToElement('id_powermix');"
                 style="max-width: 105px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important; margin-top:none;border-top:none;border-bottom:none;color: grey" label="Powermix" >
-              </q-tab>
+              </q-tab> -->
               <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: bg_color} : {}]"
                 class="q-mx-none q-py-none q-my-none custom_tab wrap" @click="goTo('bilder.html');"
                 style="max-width: 105px;flex-wrap: wrap !important;vertical-align: middle;min-height:50px !important; margin-top:none;border-top:none;border-bottom:none;color: grey" label="Bilder" >
@@ -450,7 +450,7 @@
 
                 <!-- vierte Gruppe: Freitagskinder -->
                 <div class="row">
-                  <div class="col-md-1" id="id_adults"></div>
+                  <div class="col-md-1"></div>
 
                   <div class="q-py-xl col-12 col-lg-10 col-md-10">
                     <q-card inline @mouseover="hoverOver(1)" @mouseout="hoverOutTimeout(1)" style="border: none;background: #EEEEEE;"
